@@ -101,7 +101,7 @@ runcmd pip3 install --no-cache-dir cffi certbot
 
 log "Checking for latest NPM release"
 # Get latest version information for nginx-proxy-manager
-runcmd 'wget $WGETOPT -O ./_latest_release $NPMURL/releases/latest'
+runcmd 'wget $WGETOPT -O ./_latest_release $NPMURL/releases/tag/v2.9.14'
 _latest_version=$(basename $(cat ./_latest_release | grep -wo "expanded_assets/v.*\d") | cut -d'v' -f2)
 
 # Download nginx-proxy-manager source
